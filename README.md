@@ -17,7 +17,6 @@ Ride_dispatch_project/
 |   +-- person5_diagnostics_performance.c
 |   +-- menu.c
 +-- main.c
-+-- Makefile
 +-- README.md
 ```
 
@@ -94,7 +93,7 @@ Responsibilities:
 ### Linux / macOS / Git Bash / WSL
 
 ```bash
-make
+gcc -Wall -Wextra -std=c11 -Iinclude -o ride_dispatch main.c src/*.c -lm
 ./ride_dispatch
 ```
 

@@ -95,13 +95,21 @@ void menu_insert(void) {
 
 void menu_range_query(void) {
     printf("\n--------------------------------------------------\n  OPTION 2 : Range Query\n--------------------------------------------------\n");
-    if (g_total_inserted == 0) { printf("  [!] No drivers in system. Run Option 1 first.\n"); return; }
+
+    if (g_total_inserted == 0){
+        printf("  [!] No drivers in system. Run Option 1 first.\n");
+        return; 
+    }
 
     double cx, cy, r;
     printf("  User X : "); scanf("%lf", &cx); flush_stdin();
     printf("  User Y : "); scanf("%lf", &cy); flush_stdin();
     printf("  Radius : "); scanf("%lf", &r);  flush_stdin();
-    if (r <= 0) { printf("  [!] Radius must be positive.\n"); return; }
+
+    if(r <= 0) { 
+        printf("  [!] Radius must be positive.\n"); 
+        return; 
+    }
 
     int avail;
     printf("  Show all drivers or only AVAILABLE? [0=all / 1=available] : ");
