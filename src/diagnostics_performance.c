@@ -51,7 +51,10 @@ Driver *brute_force_nn(double cx, double cy, int available_only) {
         double dx = cx - driver_registry[i].x;
         double dy = cy - driver_registry[i].y;
         double d2 = dx*dx + dy*dy;
-        if (d2 < best_d2) { best_d2 = d2; best = &driver_registry[i]; }
+        if (d2 < best_d2){ 
+            best_d2 = d2; 
+            best = &driver_registry[i]; 
+        }
     }
     return best;
 }

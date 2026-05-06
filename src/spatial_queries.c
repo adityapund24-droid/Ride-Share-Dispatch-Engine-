@@ -1,8 +1,8 @@
 #include "ride_dispatch.h"
 
 void qt_range_query(QuadNode *node, double cx, double cy, double radius, int available_only, RangeResult *res) {
-    if (!node || res->count >= MAX_RESULTS) return;
-    if (!bbox_intersects_circle(&node->bbox, cx, cy, radius)) return;
+    if (node!= NULL && res->count >= MAX_RESULTS) return;
+    if (bbox_intersects_circle(&node->bbox, cx, cy, radius)!=1) return;
 
     if (node->is_leaf) {
         if (node->driver) {
@@ -48,6 +48,8 @@ void qt_nearest_neighbor(QuadNode *node, double cx, double cy, int available_onl
     }
 
     for (int i = 0; i < 4; i++){
-        if (i != first && node->child[i]) qt_nearest_neighbor(node->child[i], cx, cy, available_only, best);
+        if (i != first && node->child[i]){
+            qt_nearest_neighbor(node->child[i], cx, cy, available_only, best);
+        }
     }
 }

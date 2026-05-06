@@ -1,7 +1,7 @@
 #include "ride_dispatch.h"
 
 const char *status_label[] = {
-    "INACTIVE ", "AVAILABLE", "BUSY     ", "OFFLINE  "
+    "INACTIVE", "AVAILABLE", "BUSY", "OFFLINE"
 };
 
 Driver driver_registry[MAX_DRIVERS + 1];
